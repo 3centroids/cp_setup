@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Usage: run-tests.sh file
+# Usage: run-tests.sh file (basename)
 # Expects a folder <FILE>-tests/ with *.in and corresponding *.out files
 
 set -e
@@ -9,7 +9,7 @@ FILE="${FILE%.cpp}"
 TESTDIR="${FILE}-tests"
 
 if [ ! -f "$FILE" ]; then
-    echo "File $FILE not found."
+    echo "Executable $FILE not found."
     exit 1
 fi
 
