@@ -5,7 +5,7 @@ cp setup
 cp_setup.sh can be aliased (alias cp_setup="path_to/cp_setup.sh")
 
 Usage: make_problem.sh problem-name [num-tests]
-Example: make_problem.sh f 3
+Example: make_problem.sh problem-name 3
 If num-tests is omitted, defaults to 0
 
 === Makefile
