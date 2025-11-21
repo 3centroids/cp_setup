@@ -2,7 +2,7 @@ cp setup
 
 === cp_setup.sh
 
-cp_setup.sh can be aliased (aliast cp_setup="path_to/cp_setup.sh")
+cp_setup.sh can be aliased (alias cp_setup="path_to/cp_setup.sh")
 
 Usage: make_problem.sh problem-name [num-tests]
 Example: make_problem.sh f 3
