@@ -17,27 +17,7 @@ all: $(FILE)
 %: %.cpp
 	$(CXX) $< -o $@ $(CXXFLAGS)
 
-# Run with input from <FILE>.in if present
-run: $(FILE)
-	@if [ -f $(FILE).in ]; then ./$(FILE) < $(FILE).in; \
-	else ./$(FILE); fi
-
-# Run without input even if input file exists
-run-noin: $(FILE)
-	./$(FILE)
-
-# Multi-test runner: folder f-tests/ with .in files
-test: $(FILE)
-	@if [ -d $(FILE)-tests ]; then \
-		for t in $(FILE)-tests/*.in; do \
-			echo "== $$t =="; \
-			./$(FILE) < $$t; \
-		done \
-	else \
-		echo "No $(FILE)-tests/ directory"; \
-	fi
-
 clean:
 	rm -f $(patsubst %.cpp,%,$(wildcard *.cpp))
 
-.PHONY: all run run-noin test clean
+.PHONY: all clean

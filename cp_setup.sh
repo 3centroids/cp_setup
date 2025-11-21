@@ -33,9 +33,13 @@ if [ "$NUM_TESTS" -gt 0 ]; then
     TESTDIR="${NAME}-tests"
     mkdir -p "$TESTDIR"
     for ((i=1; i<=NUM_TESTS; i++)); do
-        TESTFILE="$TESTDIR/$i.in"
-        if [ ! -f "$TESTFILE" ]; then
-            touch "$TESTFILE"
+        TEST_IN="$TESTDIR/$i.in"
+        if [ ! -f "$TEST_IN" ]; then
+            touch "$TEST_IN"
+        fi
+        TEST_OUT="$TESTDIR/$i.out"
+        if [ ! -f "$TEST_OUT" ]; then
+            touch "$TEST_OUT"
         fi
     done
     echo "Created $NUM_TESTS test files in $TESTDIR/"
